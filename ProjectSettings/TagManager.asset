@@ -8,6 +8,8 @@ TagManager:
   - Head
   - charaVoiceOverAudioSource
   - Audio
+  - Fire
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Unity.FPS.Game;
 using UnityEngine;
 using UnityEngine.Events;
@@ -15,6 +16,7 @@ namespace Unity.FPS.Gameplay
             PutDownPrevious,
             PutUpNew,
         }
+        public PlayerCharacterController movement;
 
         [Tooltip("List of weapon the player will start with")]
         public List<WeaponController> StartingWeapons = new List<WeaponController>();
@@ -555,5 +557,15 @@ namespace Unity.FPS.Gameplay
                 newWeapon.ShowWeapon(true);
             }
         }
+
+        void OnCollisionEnter (Collision collisionInfo)
+        {
+            if (collisionInfo.collider.tag == "Obstacle")
+            {
+                movement.enabled = false;
+            }
+        }
+ 
+ 
     }
 }

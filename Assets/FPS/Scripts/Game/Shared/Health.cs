@@ -44,8 +44,8 @@ namespace Unity.FPS.Game
 
         public void TakeDamage(float damage, GameObject damageSource)
         {
-            if (Invincible)
-                return;
+            //if (Invincible)
+                //return;
 
             float healthBefore = CurrentHealth;
             CurrentHealth -= damage;
