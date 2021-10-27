@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 namespace Unity.FPS.Game
 {
@@ -80,6 +83,7 @@ namespace Unity.FPS.Game
             if (CurrentHealth <= 0f)
             {
                 m_IsDead = true;
+                SceneManager.LoadScene("LoseScene");
                 OnDie?.Invoke();
             }
         }
