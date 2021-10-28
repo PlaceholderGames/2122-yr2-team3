@@ -31,6 +31,20 @@ namespace Unity.FPS.Game
             CurrentHealth = MaxHealth;
         }
 
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.tag == "Enemy")
+            {
+                CurrentHealth = MaxHealth - 25;
+            }
+
+            if (collision.gameObject.tag == "Enemy2")
+            {
+                CurrentHealth = MaxHealth - 40;
+            }
+
+        }
+
         public void Heal(float healAmount)
         {
             float healthBefore = CurrentHealth;
@@ -86,6 +100,8 @@ namespace Unity.FPS.Game
                 SceneManager.LoadScene("LoseScene");
                 OnDie?.Invoke();
             }
+
+
         }
     }
 }
