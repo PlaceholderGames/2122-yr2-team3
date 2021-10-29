@@ -17,6 +17,8 @@ namespace Unity.FPS.Game
         public UnityAction<float> OnHealed;
         public UnityAction OnDie;
 
+
+
         public float CurrentHealth { get; set; }
         public bool Invincible { get; set; }
         public bool CanPickup() => CurrentHealth < MaxHealth;
@@ -31,18 +33,28 @@ namespace Unity.FPS.Game
             CurrentHealth = MaxHealth;
         }
 
-        private void OnCollisionEnter(Collision collision)
+        //private void OnCollisionEnter(Collision collision)
+        //{
+
+        //    if (collision.gameObject.tag == "Enemy")
+        //    {
+        //        CurrentHealth = CurrentHealth - 25f;
+        //    }
+
+        //    if (collision.gameObject.tag == "Enemy2")
+        //    {
+        //        CurrentHealth = CurrentHealth - 40f;
+        //    }
+
+        //    HandleDeath();
+        //}
+
+        void OnCollisionEnter(Collision collisionInfo)
         {
-            if (collision.gameObject.tag == "Enemy")
+            if (collisionInfo.gameObject.CompareTag("Enemy"))
             {
-                CurrentHealth = MaxHealth - 25;
+                CurrentHealth -= 10;
             }
-
-            if (collision.gameObject.tag == "Enemy2")
-            {
-                CurrentHealth = MaxHealth - 40;
-            }
-
         }
 
         public void Heal(float healAmount)
