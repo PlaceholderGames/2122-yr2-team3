@@ -35,27 +35,25 @@ namespace Unity.FPS.Game
 
         //private void OnCollisionEnter(Collision collision)
         //{
+            
 
+            
         //    if (collision.gameObject.tag == "Enemy")
-        //    {
-        //        CurrentHealth = CurrentHealth - 25f;
-        //    }
+        //        {
+        //            CurrentHealth = CurrentHealth - 25f;
+        //        }
 
         //    if (collision.gameObject.tag == "Enemy2")
-        //    {
-        //        CurrentHealth = CurrentHealth - 40f;
-        //    }
+        //        {
+        //            CurrentHealth = CurrentHealth - 40f;
+        //        }
 
-        //    HandleDeath();
+
+            
+
         //}
 
-        void OnCollisionEnter(Collision collisionInfo)
-        {
-            if (collisionInfo.gameObject.CompareTag("Enemy"))
-            {
-                CurrentHealth -= 10;
-            }
-        }
+
 
         public void Heal(float healAmount)
         {
